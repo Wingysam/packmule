@@ -1,3 +1,2 @@
 #!/bin/bash
-/bin/alias web="cd /var/www/html"
-/bin/echo alias'd
+/bin/echo Hi
