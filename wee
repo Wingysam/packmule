@@ -1,0 +1,31 @@
+#!/bin/bash
+
+#Installing software
+if [ $1 == install ]
+then
+	if [ $2 == run ]
+	then
+	wget -O /home/$USER/Downloads/run http://raw.githubusercontent.com/Wingysam/wee/master/run
+	cp /home/$USER/Downloads/run /home/$USER/bin/run
+	chmod +x /home/$USER/bin/run
+	fi
+fi
+
+#Removing software
+if [ $1 == remove ]
+then
+	rm /home/$USER/bin/"$2"
+fi
+
+#Updating wee
+if [ $1 == update ]
+then
+	wget -O /home/$USER/Downloads/wee http://raw.githubusercontent.com/Wingysam/wee/master/wee
+	echo \#\/bin\/bash > /home/$USER/bin/wupd
+	echo rm\ /home/$USER/bin/wee >> /home/$USER/bin/wupd
+	echo cp\ /home/$USER/Downloads/wee /home/$USER/bin/wee >> /home/$USER/bin/wupd
+	echo chmod +x /home/$USER/bin/wee >> /home/$USER/bin/wupd
+	echo rm\ /home/$USER/bin/wupd >> /home/$USER/bin/wupd
+	chmod +x /home/$USER/bin/wupd
+	wupd
+fi
