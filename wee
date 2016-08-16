@@ -3,9 +3,12 @@
 #Installing software
 if [ $1 == install ]
 then
-wget -O /home/$USER/Downloads/$1 http://raw.githubusercontent.com/Wingysam/wee/master/packages/$1
-cp /home/$USER/Downloads/$1 /home/$USER/bin/$1
-chmod +x /home/$USER/bin/$1
+	if [ "$(curl https://raw.githubusercontent.com/Wingysam/wee/master/packages/$2)" != 404:\ Not\ Found ]
+	then
+		wget -O /home/$USER/Downloads/$1 http://raw.githubusercontent.com/Wingysam/wee/master/packages/$1
+		cp /home/$USER/Downloads/$1 /home/$USER/bin/$1
+		chmod +x /home/$USER/bin/$1
+	fi
 #	if [ $2 == run ]
 #	then
 #	wget -O /home/$USER/Downloads/run http://raw.githubusercontent.com/Wingysam/wee/master/run
