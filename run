@@ -1,5 +1,0 @@
-#!/bin/bash
-wget --quiet -O ~/bin/BashRun/script $1
-chmod +x ~/bin/BashRun/script
-~/bin/BashRun/script
-rm ~/bin/BashRun/script
