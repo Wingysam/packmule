@@ -1,4 +1,0 @@
-#!/bin/bash
-touch /home/$USER/bin/$1
-nano /home/$USER/bin/$1
-chmod +x /home/$USER/bin/$1
