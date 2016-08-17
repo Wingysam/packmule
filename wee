@@ -4,7 +4,7 @@
 if [ $1 == install ]
 then
 	curl -s https://raw.githubusercontent.com/Wingysam/wee/master/packages/$2 > /home/$USER/404possyb
-	if [ "$(</home/$USER/404possyb" != 404:\ Not\ Found ]
+	if [ "$(</home/$USER/404possyb)" != 404:\ Not\ Found ]
 	then
 		wget -O /home/$USER/Downloads/$1 http://raw.githubusercontent.com/Wingysam/wee/master/packages/$1
 		cp /home/$USER/Downloads/$1 /home/$USER/bin/$1
