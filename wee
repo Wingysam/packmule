@@ -7,13 +7,6 @@ then
 	cp /home/$USER/Downloads/$1 /home/$USER/bin/$1
 	chmod +x /home/$USER/bin/$1
 fi
-#	if [ $2 == run ]
-#	then
-#	wget -O /home/$USER/Downloads/run http://raw.githubusercontent.com/Wingysam/wee/master/run
-#	cp /home/$USER/Downloads/run /home/$USER/bin/run
-#	chmod +x /home/$USER/bin/run
-#	fi
-fi
 
 #Removing software
 if [ $1 == remove ]
