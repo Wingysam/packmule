@@ -3,9 +3,9 @@
 #Installing software
 if [ $1 == install ]
 then
-	wget -O /home/$USER/Downloads/$1 http://raw.githubusercontent.com/Wingysam/wee/master/packages/$1
-	cp /home/$USER/Downloads/$1 /home/$USER/bin/$1
-	chmod +x /home/$USER/bin/$1
+	wget -O /home/$USER/Downloads/$2 http://raw.githubusercontent.com/Wingysam/wee/master/packages/$2
+	cp /home/$USER/Downloads/$2 /home/$USER/bin/$2
+	chmod +x /home/$USER/bin/$2
 fi
 
 #Removing software
