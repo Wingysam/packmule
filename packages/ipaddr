@@ -1,0 +1,5 @@
+#!/bin/bash
+printf Internal:\ 
+ifconfig | awk '/inet addr/{print substr($2,6)}' | sed '1d'
+printf External:\ 
+dig +short myip.opendns.com @resolver1.opendns.com
