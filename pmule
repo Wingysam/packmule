@@ -32,12 +32,12 @@ fi
 if [ $1 == update ]
 then
 	echo Downloading...
-	wget -q -O /home/$USER/Downloads/wee http://raw.githubusercontent.com/Wingysam/packmule/master/pmule
+	wget -q -O /home/$USER/Downloads/PackMule http://raw.githubusercontent.com/Wingysam/packmule/master/pmule
 	echo Creating install file...
 	echo \#\/bin\/bash > /home/$USER/bin/wupd
-	echo rm\ /home/$USER/bin/wee >> /home/$USER/bin/wupd
-	echo cp\ /home/$USER/Downloads/wee /home/$USER/bin/wee >> /home/$USER/bin/wupd
-	echo chmod +x /home/$USER/bin/wee >> /home/$USER/bin/wupd
+	echo rm\ /home/$USER/bin/pmule >> /home/$USER/bin/wupd
+	echo cp\ /home/$USER/Downloads/PackMule /home/$USER/bin/pmule >> /home/$USER/bin/wupd
+	echo chmod +x /home/$USER/bin/pmule >> /home/$USER/bin/wupd
 	echo rm\ /home/$USER/bin/wupd >> /home/$USER/bin/wupd
 	chmod +x /home/$USER/bin/wupd
 	echo Installing...
