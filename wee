@@ -3,15 +3,29 @@
 #Installing software
 if [ $1 == install ]
 then
-	wget -O /home/$USER/Downloads/$2 http://raw.githubusercontent.com/Wingysam/wee/master/packages/$2
-	cp /home/$USER/Downloads/$2 /home/$USER/bin/$2
-	chmod +x /home/$USER/bin/$2
+	echo Checking if $2 exists...
+	if [ $(curl -s --write-out %{http_code} "http://raw.githubusercontent.com/Wingysam/wee/master/packages/$2" | awk 'END{print}') == 200 ]
+	then
+		echo Downloading...
+		wget -q -O /home/$USER/Downloads/$2 http://raw.githubusercontent.com/Wingysam/wee/master/packages/$2
+		echo Copying $2 to bin.
+		cp /home/$USER/Downloads/$2 /home/$USER/bin/$2
+		echo Allowing running of $2 as a program.
+		chmod +x /home/$USER/bin/$2
+		echo $2 has been installed!
+	fi
 fi
 
 #Removing software
 if [ $1 == remove ]
 then
-	rm /home/$USER/bin/"$2"
+	echo Checking if $2 exists...
+	if [ -e /home/$USER/bin/"$2" ]
+	then
+		echo Removing.
+		rm /home/$USER/bin/"$2"
+		echo Removed.
+	fi
 fi
 
 #Updating wee
