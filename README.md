@@ -1,6 +1,6 @@
-# Wee Package Manager
-wee install Package: Install Package
+# PackMule Package Manager
+pmule install Package: Install Package
 
-wee remove Package: Remove Package
+pmule remove Package: Remove Package
 
-wee update: Update wee
+pmule update: Update wee
