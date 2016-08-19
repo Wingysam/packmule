@@ -31,12 +31,16 @@ fi
 #Updating wee
 if [ $1 == update ]
 then
-	wget -O /home/$USER/Downloads/wee http://raw.githubusercontent.com/Wingysam/wee/master/wee
+	echo Downloading...
+	wget -s -O /home/$USER/Downloads/wee http://raw.githubusercontent.com/Wingysam/wee/master/wee
+	echo Creating install file...
 	echo \#\/bin\/bash > /home/$USER/bin/wupd
 	echo rm\ /home/$USER/bin/wee >> /home/$USER/bin/wupd
 	echo cp\ /home/$USER/Downloads/wee /home/$USER/bin/wee >> /home/$USER/bin/wupd
 	echo chmod +x /home/$USER/bin/wee >> /home/$USER/bin/wupd
 	echo rm\ /home/$USER/bin/wupd >> /home/$USER/bin/wupd
 	chmod +x /home/$USER/bin/wupd
+	echo Installing...
 	wupd
+	echo Updated!
 fi
