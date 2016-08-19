@@ -8,7 +8,7 @@ then
 	then
 		echo Downloading...
 		wget -q -O /home/$USER/Downloads/$2 https://raw.githubusercontent.com/Wingysam/packmule/master/packages/$2
-		if [ "(tail -1 /home/$USER/Downloads/$2)" == \#installerfile ]
+		if [ "$(tail -1 /home/$USER/Downloads/$2)" == \#installerfile ]
 		then
 			chmod +x /home/$USER/Downloads/$2
 			/home/$USER/Downloads/$2
