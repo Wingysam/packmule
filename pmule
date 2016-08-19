@@ -8,11 +8,17 @@ then
 	then
 		echo Downloading...
 		wget -q -O /home/$USER/Downloads/$2 https://raw.githubusercontent.com/Wingysam/packmule/master/packages/$2
-		echo Copying $2 to bin.
-		cp /home/$USER/Downloads/$2 /home/$USER/bin/$2
-		echo Allowing running of $2 as a program.
-		chmod +x /home/$USER/bin/$2
-		echo $2 has been installed!
+		if [ tail -1 /home/$USER/Downloads/$2 == #installerfile ]
+		then
+			chmod +x /home/$USER/Downloads/$2
+			/home/$USER/Downloads/$2
+		else
+			echo Copying $2 to bin.
+			cp /home/$USER/Downloads/$2 /home/$USER/bin/$2
+			echo Allowing running of $2 as a program.
+			chmod +x /home/$USER/bin/$2
+			echo $2 has been installed!
+		fi
 	fi
 fi
 
