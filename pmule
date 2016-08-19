@@ -4,10 +4,10 @@
 if [ $1 == install ]
 then
 	echo Checking if $2 exists...
-	if [ $(curl -s --write-out %{http_code} "http://raw.githubusercontent.com/Wingysam/packmule/master/packages/$2" | awk 'END{print}') == 200 ]
+	if [ $(curl -s --write-out %{http_code} "https://raw.githubusercontent.com/Wingysam/packmule/master/packages/$2" | awk 'END{print}') == 200 ]
 	then
 		echo Downloading...
-		wget -q -O /home/$USER/Downloads/$2 http://raw.githubusercontent.com/Wingysam/packmule/master/packages/$2
+		wget -q -O /home/$USER/Downloads/$2 https://raw.githubusercontent.com/Wingysam/packmule/master/packages/$2
 		echo Copying $2 to bin.
 		cp /home/$USER/Downloads/$2 /home/$USER/bin/$2
 		echo Allowing running of $2 as a program.
@@ -32,7 +32,7 @@ fi
 if [ $1 == update ]
 then
 	echo Downloading...
-	wget -q -O /home/$USER/Downloads/PackMule http://raw.githubusercontent.com/Wingysam/packmule/master/pmule
+	wget -q -O /home/$USER/Downloads/PackMule https://raw.githubusercontent.com/Wingysam/packmule/master/pmule
 	echo Creating install file...
 	echo \#\/bin\/bash > /home/$USER/bin/wupd
 	echo rm\ /home/$USER/bin/pmule >> /home/$USER/bin/wupd
