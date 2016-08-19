@@ -31,6 +31,11 @@ then
 		echo Removing.
 		rm /home/$USER/bin/"$2"
 		echo Removed.
+	else
+		if [ -e /home/$USER/bin/.packmuleuninstall/$2 ]
+		then
+			/home/$USER/bin/.packmuleuninstall/$2
+		fi
 	fi
 fi
 
