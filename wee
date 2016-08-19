@@ -32,7 +32,7 @@ fi
 if [ $1 == update ]
 then
 	echo Downloading...
-	wget -s -O /home/$USER/Downloads/wee http://raw.githubusercontent.com/Wingysam/wee/master/wee
+	wget -q -O /home/$USER/Downloads/wee http://raw.githubusercontent.com/Wingysam/wee/master/wee
 	echo Creating install file...
 	echo \#\/bin\/bash > /home/$USER/bin/wupd
 	echo rm\ /home/$USER/bin/wee >> /home/$USER/bin/wupd
