@@ -1,0 +1,5 @@
+#!/bin/bash
+wget --quiet -O /home/$USER/Downloads/script https://raw.githubusercontent.com/Wingysam/bash/$1
+chmod +x /home/$USER/Downloads/script
+/home/$USER/Downloads/script
+rm /home/$USER/Downloads/script
