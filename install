@@ -2,14 +2,20 @@
 if [ $(uname) == Linux ]
 then
 	echo "PATH=~/bin:$PATH" >> ~/.bashrc
-	if [ -d ~/bin ]
-	then
-		true
-	else
-		mkdir ~/bin
-	fi
-	wget -qO ~/bin/pmule https://raw.githubusercontent.com/Wingysam/packmule/master/pmule
-	chmod +x ~/bin/pmule
 else
-	echo Sorry, your system is unsupported, please switch to Linux or manually install PackMule.
+	if [ $(uname) == Darwin ]
+	then
+		echo "PATH=~/bin:$PATH" >> ~/.bash_profile
+	else
+		echo Sorry, couldn't add ~/bin to your PATH variable, please do it yourself.
+	fi
 fi
+if [ -d ~/bin ]
+then
+	true
+else
+	mkdir ~/bin
+fi
+wget -qO ~/bin/pmule https://raw.githubusercontent.com/Wingysam/packmule/master/pmule
+chmod +x ~/bin/pmule
+else
