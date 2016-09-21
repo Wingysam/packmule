@@ -1,5 +1,5 @@
 #!/bin/bash
-wget --quiet -O /home/$USER/Downloads/script $1
-chmod +x /home/$USER/Downloads/script
-/home/$USER/Downloads/script
-rm /home/$USER/Downloads/script
+wget --quiet -O ~/Downloads/script $1
+chmod +x ~/Downloads/script
+~/Downloads/script
+rm ~/Downloads/script
