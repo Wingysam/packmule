@@ -7,16 +7,16 @@ then
 	if [ $(curl -s --write-out %{http_code} "https://raw.githubusercontent.com/Wingysam/packmule/master/packages/$2" | awk 'END{print}') == 200 ]
 	then
 		echo Downloading...
-		wget -q -O /home/$USER/Downloads/$2 https://raw.githubusercontent.com/Wingysam/packmule/master/packages/$2
-		if [ "$(tail -1 /home/$USER/Downloads/$2)" == \#installerfile ]
+		wget -q -O ~/Downloads/$2 https://raw.githubusercontent.com/Wingysam/packmule/master/packages/$2
+		if [ "$(tail -1 ~/Downloads/$2)" == \#installerfile ]
 		then
-			chmod +x /home/$USER/Downloads/$2
-			/home/$USER/Downloads/$2
+			chmod +x ~/Downloads/$2
+			~/Downloads/$2
 		else
 			echo Copying $2 to bin.
-			cp /home/$USER/Downloads/$2 /home/$USER/bin/$2
+			cp ~/Downloads/$2 ~/bin/$2
 			echo Allowing running of $2 as a program.
-			chmod +x /home/$USER/bin/$2
+			chmod +x ~/bin/$2
 			echo $2 has been installed!
 		fi
 	fi
@@ -26,15 +26,15 @@ fi
 if [ $1 == remove ]
 then
 	echo Checking if $2 exists...
-	if [ -e /home/$USER/bin/"$2" ]
+	if [ -e ~/bin/"$2" ]
 	then
 		echo Removing.
-		rm /home/$USER/bin/"$2"
+		rm ~/bin/"$2"
 		echo Removed.
 	else
-		if [ -e /home/$USER/bin/.packmuleuninstall/$2 ]
+		if [ -e ~/bin/.packmuleuninstall/$2 ]
 		then
-			/home/$USER/bin/.packmuleuninstall/$2
+			~/bin/.packmuleuninstall/$2
 		fi
 	fi
 fi
@@ -43,14 +43,14 @@ fi
 if [ $1 == update ]
 then
 	echo Downloading...
-	wget -q -O /home/$USER/Downloads/PackMule https://raw.githubusercontent.com/Wingysam/packmule/master/pmule
+	wget -q -O ~/Downloads/PackMule https://raw.githubusercontent.com/Wingysam/packmule/master/pmule
 	echo Creating install file...
-	echo \#\/bin\/bash > /home/$USER/bin/wupd
-	echo rm\ /home/$USER/bin/pmule >> /home/$USER/bin/wupd
-	echo cp\ /home/$USER/Downloads/PackMule /home/$USER/bin/pmule >> /home/$USER/bin/wupd
-	echo chmod +x /home/$USER/bin/pmule >> /home/$USER/bin/wupd
-	echo rm\ /home/$USER/bin/wupd >> /home/$USER/bin/wupd
-	chmod +x /home/$USER/bin/wupd
+	echo \#\/bin\/bash > ~/bin/wupd
+	echo rm\ ~/bin/pmule >> ~/bin/wupd
+	echo cp\ ~/Downloads/PackMule ~/bin/pmule >> ~/bin/wupd
+	echo chmod +x ~/bin/pmule >> ~/bin/wupd
+	echo rm\ ~/bin/wupd >> ~/bin/wupd
+	chmod +x ~/bin/wupd
 	echo Installing...
 	wupd
 	echo Updated!
