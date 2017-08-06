@@ -7,7 +7,7 @@ else
 	then
 		echo "PATH=~/bin:$PATH" >> ~/.bash_profile
 	else
-		echo Sorry, couldn't add ~/bin to your PATH variable, please do it yourself.
+		echo "Sorry, couldn't add ~/bin to your PATH variable, please do it yourself."
 	fi
 fi
 if [ -d ~/bin ]
