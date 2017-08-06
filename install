@@ -18,4 +18,3 @@ else
 fi
 wget -qO ~/bin/pmule https://raw.githubusercontent.com/Wingysam/packmule/master/pmule
 chmod +x ~/bin/pmule
-else
