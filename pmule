@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 #Installing software
 if [ $1 == install ]
 then
