@@ -1,20 +1,15 @@
 #!/bin/bash
+
+echo DEPRECATED -- Installing Brew instead.
+
 if [ $(uname) == Linux ]
 then
-	echo "PATH=~/bin:$PATH" >> ~/.bashrc
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 else
 	if [ $(uname) == Darwin ]
 	then
-		echo "PATH=~/bin:$PATH" >> ~/.bash_profile
+		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	else
-		echo "Sorry, couldn't add ~/bin to your PATH variable, please do it yourself."
+		echo "Sorry, couldn't install brew, please do it yourself."
 	fi
 fi
-if [ -d ~/bin ]
-then
-	true
-else
-	mkdir ~/bin
-fi
-wget -qO ~/bin/pmule https://raw.githubusercontent.com/Wingysam/packmule/master/pmule
-chmod +x ~/bin/pmule
